@@ -1,0 +1,31 @@
+Visualforce Page:
+<apex:page>
+    <apex:form>
+        <apex:pageBlock>
+            <apex:pageBlockSection title="Sign Up">
+                <apex:InputText label="Username" placeholder="User Name"/>
+                <apex:InputText label="Password" placeholder="Password"/>
+                <apex:InputText label="Organization" placeholder="Organization"/>
+                <apex:InputText label="Email ID" placeholder="Email Id"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons>
+                <apex:commandButton value="Reset" action="{!reset}" />
+                <apex:commandButton value="Submit" action="{!submit}" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
+
+Controller:
+public class SignUpController {
+    public void reset() {
+        // Reset the form
+    }
+
+    public void submit() {
+        // Validate the user's input
+        // Send a confirmation email to the provided address
+        // Create a new user
+        // Redirect to the login page
+    }
+}
