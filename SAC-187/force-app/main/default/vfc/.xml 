@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexTrigger xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>46.0</apiVersion>
+    <status>Active</status>
+    <triggerName>Institute_Trigger</triggerName>
+    <description>Trigger to set Student__c records to Inactive if their Status__c was created more than 30 days ago.</description>
+    <triggerType>before update</triggerType>
+    <content>InstituteTrigger.cls</content>
+    <unhandledTriggerException>
+        <rollback>true</rollback>
+    </unhandledTriggerException>
+</ApexTrigger>
