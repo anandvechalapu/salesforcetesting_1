@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Trigger xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>46.0</apiVersion>
+    <description>Trigger to open a Modal/Popup window with a ‘Welcome’ message in Lightning Web Component(LWC)</description>
+    <status>Active</status>
+    <triggerName>CreateModalPopup</triggerName>
+    <type>onClick</type>
+    <length>short</length>
+    <unExecute>onClick</unExecute>
+    <formulas>[]</formulas>
+    <isDeterministic>false</isDeterministic>
+    <variables>[]</variables>
+    <criteriaItems>[]</criteriaItems>
+    <actions>
+        <name>OpenModalPopup</name>
+        <type>Popup</type>
+        <content>Welcome</content>
+        <visibility>Visible</visibility>
+        <closeButton>true</closeButton>
+        <onClose>CloseModalPopup</onClose>
+    </actions>
+    <conditions>[]</conditions>
+    <workflow>false</workflow>
+</Trigger>
