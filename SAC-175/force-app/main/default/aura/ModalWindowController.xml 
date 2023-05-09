@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuraDefinition>
+    <Component>
+        <aura:component>
+            <aura:attribute name="isModalVisible" type="Boolean" default="false"/>
+            <div>
+                <lightning:button label="Open Modal" onclick="{!c.openModal}"/>
+            </div>
+
+            <aura:if isTrue="{!v.isModalVisible}">
+                <div class="modal-backdrop" onclick="{!c.closeModal}"/>
+                <div class="modal">
+                    <div class="modal-header">
+                        <h2>Welcome</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Welcome to the Salesforce world!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <lightning:button label="Close" onclick="{!c.closeModal}"/>
+                    </div>
+                </div>
+            </aura:if>
+        </aura:component>
+    </Component>
+
+    <Controller>
+        <aura:controller>
+            <aura:method name="openModal" action="{!c.openModal}">
+            </aura:method>
+            <aura:method name="closeModal" action="{!c.closeModal}">
+            </aura:method>
+        </aura:controller>
+    </Controller>
+
+    <Style>
+        <aura:style>
+            .modal-backdrop {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                top: 0;
+                left: 0;
+            }
+            .modal {
+                position: fixed;
+                width: 80%;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                background: #fff;
+                padding: 20px;
+            }
+        </aura:style>
+    </Style>
+
+    <ClientController>
+        <aura:clientController>
+            openModal : function(component, event, helper) {
+            component.set("v.isModalVisible", true);
+        },
+
+        closeModal : function(component, event, helper) {
+            component.set("v.isModalVisible", false);
+        }
+        </aura:clientController>
+    </ClientController>
+</AuraDefinition>

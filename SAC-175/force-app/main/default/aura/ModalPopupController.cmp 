@@ -1,0 +1,32 @@
+<aura:component>
+    <aura:attribute name="showModal" type="Boolean" default="false"/>
+    <div>
+        <lightning:button label="Show Modal" onclick="{! c.showModal }"/>
+    </div>
+    <aura:if isTrue="{!v.showModal}">
+        <div class="slds-modal slds-fade-in-open" role="dialog" tabindex="-1">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header">
+                    <h2 class="slds-text-heading--medium">Welcome</h2>
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{! c.hideModal }">
+                        <lightning:icon iconName="utility:close"/>
+                    </button>
+                </div>
+                <div class="slds-modal__content" id="modal-content-id">
+                    <p>This is a modal window.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+    </aura:if>
+</aura:component>
+
+Controller.js
+({
+    showModal : function(component, event, helper) {
+        component.set("v.showModal", true);
+    },
+    hideModal : function(component, event, helper) {
+        component.set("v.showModal", false);
+    }
+})
